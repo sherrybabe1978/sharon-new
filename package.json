@@ -39,7 +39,10 @@
     "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@tldraw/tldraw": "2.0.0-alpha.17",
+    "canvas-size": "^1.2.6",
+    "prismjs": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
@@ -55,6 +58,9 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "supabase": "^1.142.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/canvas-size": "^1.2.1",
+    "@types/prismjs": "^1.26.3",
+    "tailwindcss": "^3.3.0"
   }
 }
