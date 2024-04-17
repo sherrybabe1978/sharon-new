@@ -1,3 +1,5 @@
+"use client"
+
 import Pricing from '@/components/ui/Pricing/Pricing'; // Import the Pricing component
 import { createClient } from '@/utils/supabase/server';
 
