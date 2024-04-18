@@ -28,24 +28,27 @@
     "@stripe/stripe-js": "2.4.0",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.3",
+    "@tldraw/tldraw": "2.0.0-alpha.17",
+    "axios": "^1.6.8",
+    "canvas-size": "^1.2.6",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "lucide-react": "0.330.0",
     "next": "14.1.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-merge-refs": "^2.1.1",
     "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
-    "tailwindcss-animate": "^1.0.7",
-    "@tldraw/tldraw": "2.0.0-alpha.17",
-    "canvas-size": "^1.2.6",
-    "prismjs": "^1.29.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/canvas-size": "^1.2.1",
     "@types/node": "^20.11.17",
+    "@types/prismjs": "^1.26.3",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.17",
@@ -58,9 +61,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "supabase": "^1.142.2",
-    "typescript": "^5.3.3",
-    "@types/canvas-size": "^1.2.1",
-    "@types/prismjs": "^1.26.3",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.3.3"
   }
 }
