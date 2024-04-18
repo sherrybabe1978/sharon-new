@@ -33,6 +33,9 @@ export default function Navlinks({ user }: NavlinksProps) {
               </Link>
               <Link href="/generate" className={s.link}>
                 Generate
+              </Link>
+              <Link href="/generaterecap" className={s.link}>
+                Generate Recap
               </Link></>
           )}
         </nav>
