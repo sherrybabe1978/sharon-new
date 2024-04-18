@@ -1,8 +1,6 @@
-import CustomerPortalForm from '@/components/ui/AccountForms/CustomerPortalForm';
-import EmailForm from '@/components/ui/AccountForms/EmailForm';
-import NameForm from '@/components/ui/AccountForms/NameForm';
 import Pricing from '@/components/ui/Pricing/Pricing'; // Import the Pricing component
 import { createClient } from '@/utils/supabase/server';
+import GenerateRecap from '@/components/GenerateRecap';
 
 export default async function Account() {
   const supabase = createClient();
@@ -41,11 +39,9 @@ export default async function Account() {
       <div className="max-w-6xl px-4 py-8 mx-auto sm:px-6 sm:pt-24 lg:px-8">
         <div className="sm:align-center sm:flex sm:flex-col">
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Private Page
+            Generate Images Using SD3
           </h1>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            Congrats! You have a subscription.
-          </p>
+          <GenerateRecap />
         </div>
       </div>
     </section>
