@@ -4,7 +4,7 @@ import FormData from 'form-data';
 import { NextResponse } from 'next/server';
 
 // Change `export default async function handler` to:
-export async function POST(req: { json: () => any; }) {
+export async function POST(req: Request) {
   // Assuming the request Content-Type is 'application/json' for simplicity
   const data = await req.json();
   const formData = new FormData();
