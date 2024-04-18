@@ -6,9 +6,6 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = "experimental-edge"
 
 export async function POST(req: NextRequest) {
-  if (req.method !== 'POST') {
-    return new NextResponse('Method Not Allowed', { status: 405 });
-  }
 
   // Assuming the body is a FormData object. Adjust as necessary for your use case.
   const formData = await req.formData();
