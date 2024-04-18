@@ -1,33 +1,45 @@
-// pages/api/generate.js
+// app/api/generate/route.ts
 import axios from 'axios';
 import FormData from 'form-data';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default async function handler(req: any, res: any) {
+export const runtime = "experimental-edge"
+
+export async function POST(req: NextRequest) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return new NextResponse('Method Not Allowed', { status: 405 });
   }
 
-  const { prompt, negativePrompt, aspectRatio } = req.body;
-  const formData = new FormData();
-  formData.append('prompt', prompt);
-  formData.append('negative_prompt', negativePrompt);  // Adding negative prompt
-  formData.append('model', 'sd3');
-  formData.append('aspect_ratio', aspectRatio);
-  formData.append('output_format', 'jpeg');
+  // Assuming the body is a FormData object. Adjust as necessary for your use case.
+  const formData = await req.formData();
+  const prompt = formData.get('prompt');
+  const negativePrompt = formData.get('negative_prompt');
+  const aspectRatio = formData.get('aspect_ratio');
+  const model = 'sd3'; // Static value as example
+  const outputFormat = 'jpeg'; // Static value as example
+
+  const apiFormData = new FormData();
+  apiFormData.append('prompt', prompt?.toString());
+  apiFormData.append('negative_prompt', negativePrompt?.toString());
+  apiFormData.append('model', model);
+  apiFormData.append('aspect_ratio', aspectRatio?.toString());
+  apiFormData.append('output_format', outputFormat);
 
   try {
-    const apiResponse = await axios.post('https://api.stability.ai/v2beta/stable-image/generate/sd3', formData, {
+    const apiResponse = await axios.post('https://api.stability.ai/v2beta/stable-image/generate/sd3', apiFormData, {
       headers: {
-        ...formData.getHeaders(),
+        ...apiFormData.getHeaders(),
         'Authorization': `Bearer ${process.env.STABILITY_API_KEY}`,
         'Accept': 'image/*'
       },
       responseType: 'arraybuffer'
     });
 
-    res.status(apiResponse.status).send(apiResponse.data);
-  } catch (error) {
+    // Convert array buffer response to blob for NextResponse
+    const blob = new Blob([apiResponse.data], { type: 'image/jpeg' });
+    return new NextResponse(blob);
+  } catch (error: any) {
     console.error('API call failed:', error);
-    res.status(500).json({ error: 'Failed to generate image' });
+    return new NextResponse(`Failed to generate image: ${error.message}`, { status: 500 });
   }
 }
