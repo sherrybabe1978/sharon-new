@@ -42,9 +42,9 @@ export default async function Account() {
             Generate Page
           </h1>
           <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-            Generate using the latest Stable Diffusion 3 model
+            Generate using the latest technology
           </p>
-          <Generate />
+          <iframe src="https://botcraft-pro-rc.up.railway.app/bot/0210c84f-7037-4960-aa24-9192718d6704?mode=iframe" width="400" height="500"></iframe>
         </div>
       </div>
     </section>
