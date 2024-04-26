@@ -28,15 +28,11 @@ export default function Navlinks({ user }: NavlinksProps) {
           {user && (
             <><Link href="/account" className={s.link}>
               Account
-            </Link><Link href="/private" className={s.link}>
-                Draw a UI
-              </Link>
+            </Link>
               <Link href="/generate" className={s.link}>
-                Generate
+                Therapy
               </Link>
-              <Link href="/generaterecap" className={s.link}>
-                Generate Recap
-              </Link></>
+             
           )}
         </nav>
       </div>
